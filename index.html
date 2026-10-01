@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nöbetçi – 7/24 çok dilli hasta asistanı</title>
+<meta name="description" content="Nöbetçi: aracı kuruluşlar ve uluslararası hasta birimleri için 7/24 çok dilli ilk temas ve hasta kabul asistanı. Web sohbeti ve WhatsApp Business. Bir hekim tarafından tasarlandı.">
+<meta name="theme-color" content="#0b1c2c">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<style>
+:root{--navy:#0b1c2c;--navy2:#12304a;--teal:#0e8f8a;--teal-d:#0a6f6b;--orange:#e8590c;--ink:#14212d;--muted:#52606d;--bg:#f5f8fa;--card:#fff;--line:#dbe4ea;--r:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px;-webkit-text-size-adjust:100%}
+img,video{max-width:100%;display:block}
+a{color:var(--teal-d)}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(1.55rem,5.5vw,2.15rem);color:var(--navy)}
+h3{font-size:1.15rem;color:var(--navy)}
+p{margin:0 0 1em}
+.lead{font-size:1.1rem;color:var(--muted);max-width:640px}
+
+/* header + hero */
+.hero{background:linear-gradient(180deg,var(--navy2),var(--navy));color:#fff;padding:0 0 56px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.3rem;color:#fff;text-decoration:none}
+.brand img{width:38px;height:38px}
+.nav a.en{color:#cfe3ee;font-size:.85rem;border:1px solid #3b5a73;border-radius:999px;padding:4px 12px;text-decoration:none}
+.hero h1{font-size:clamp(2rem,8.5vw,3.4rem);margin:28px 0 10px}
+.hero .sub{font-size:1.2rem;color:#9fe3df;font-weight:600;margin:0 0 14px}
+.hero p.lead{color:#cfe0ea}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:999px;font-size:1.05rem}
+.btn:hover,.btn:focus-visible{background:#cf4d08}
+.btn.alt{background:transparent;border:2px solid #fff;margin-left:8px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 32px}
+.cta-row .btn.alt{margin-left:0}
+.video{border-radius:var(--r);overflow:hidden;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45);max-width:880px;margin:0 auto}
+.video video{width:100%;height:auto;aspect-ratio:16/9}
+.vnote{font-size:.85rem;color:#9bb2c2;text-align:center;margin:10px 0 0}
+
+/* cards */
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card p:last-child{margin:0}
+.steps{counter-reset:s}
+.card.step{position:relative;padding-left:64px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:20px;top:22px;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:grid;place-items:center}
+.never li{margin:0 0 .5em}
+.never ul{margin:0;padding-left:1.2em}
+.never .card{border-left:5px solid var(--orange)}
+.alt-bg{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.langs{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.langs li{background:var(--navy);color:#fff;border-radius:999px;padding:8px 18px;font-weight:600}
+.langs small{opacity:.7;font-weight:400;margin-left:6px}
+.doc{display:flex;gap:18px;align-items:flex-start}
+.avatar{flex:none;width:72px;height:72px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:1.5rem;font-weight:700}
+.doc h3{margin:0}
+.doc p{margin:2px 0 0;color:var(--muted)}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:0}
+summary{cursor:pointer;font-weight:700;padding:16px 20px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details .a{padding:0 20px 18px;color:var(--muted)}
+
+/* cta band + footer */
+.band{background:linear-gradient(135deg,var(--teal-d),var(--navy2));color:#fff;text-align:center;border-radius:20px;padding:40px 20px}
+.band h2{color:#fff}
+.band p{color:#d6ecea;max-width:560px;margin:0 auto 20px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem;text-align:center}
+#en .card{margin-top:10px}
+#en summary{background:transparent}
+
+@media(min-width:760px){
+ body{font-size:18px}
+ section{padding:80px 0}
+ .grid.c3{grid-template-columns:repeat(3,1fr)}
+ .grid.c2{grid-template-columns:1fr 1fr}
+ .hero{padding-bottom:80px}
+ .card{padding:26px}
+ .card.step{padding-left:70px}
+ .step::before{left:26px;top:28px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <nav class="nav" aria-label="Ana">
+   <a class="brand" href="#"><img src="assets/logo.svg" alt="" width="38" height="38">Nöbetçi</a>
+   <a class="en" href="#en" id="enlink">EN</a>
+  </nav>
+  <h1>Kliniğiniz kapalıyken de nöbette.</h1>
+  <p class="sub">Aracı kuruluşlar ve uluslararası hasta birimleri için 7/24 çok dilli hasta asistanı</p>
+  <p class="lead">Yurt dışından gelen hastalar gece yazdığında Nöbetçi kendi dillerinde cevap verir, ön bilgileri toplar ve sabah ekibinize hazır bir talep bırakır. Web sohbetine ve WhatsApp Business hattınıza bağlanır.</p>
+  <div class="cta-row">
+   <a class="btn" href="mailto:drozkan2@gmail.com?subject=N%C3%B6bet%C3%A7i%20-%2014%20g%C3%BCnl%C3%BCk%20%C3%BCcretsiz%20pilot">14 günlük ücretsiz pilot</a>
+   <a class="btn alt" href="#nasil">Nasıl çalışır?</a>
+  </div>
+  <div class="video">
+   <video controls playsinline preload="metadata" poster="assets/poster.jpg" aria-label="Nöbetçi demo videosu">
+    <source src="assets/nobetci-demo.mp4" type="video/mp4">
+    Tarayıcınız video oynatmayı desteklemiyor.
+   </video>
+  </div>
+  <p class="vnote">Demo video – kurgusal “Demo Klinik İstanbul” ile hazırlanmıştır.</p>
+ </div>
+</header>
+
+<main>
+<section id="sorun">
+ <div class="wrap">
+  <h2>Hastalar geceleyin, kendi dillerinde yazıyor</h2>
+  <p class="lead">Sağlık turizminde hasta sizi saat farkı fark etmeden arar. Mesaj Arapça, İngilizce, Almanca ya da Rusça gelir; ekibiniz uyurken beklemeye başlar.</p>
+  <div class="grid c3">
+   <div class="card"><h3>Gece gelen mesajlar</h3><p>Çalışma saatleri dışında gelen sorular sabaha kadar cevapsız kalır.</p></div>
+   <div class="card"><h3>Çok sayıda dil</h3><p>Her dilde cevap verebilecek ekip kurmak pahalı ve zordur.</p></div>
+   <div class="card"><h3>Yavaş cevap, kaybedilen hasta</h3><p>Hasta birkaç kliniğe birden yazabilir; cevabı geciken klinik geride kalabilir.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="nasil" class="alt-bg">
+ <div class="wrap">
+  <h2>Nasıl çalışır?</h2>
+  <div class="grid c3 steps">
+   <div class="card step"><h3>Hasta yazar</h3><p>Web sohbetinden ya da WhatsApp’tan, istediği dilde, günün her saatinde.</p></div>
+   <div class="card step"><h3>Nöbetçi görüşür</h3><p>Aynı dilde cevap verir, genel bilgi sunar, izin ister; ad, ülke, tarih ve iletişim bilgisini toplar ve hepsini okuyup teyit eder.</p></div>
+   <div class="card step"><h3>Ekibiniz devralır</h3><p>Talep kaydedilir. Sabah ekibiniz hazır bilgilerle hastayı arar.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="asla" class="never">
+ <div class="wrap">
+  <h2>Nöbetçi’nin asla yapmadığı şeyler</h2>
+  <p class="lead">Hasta güvenliği için sınırlar baştan çizilmiştir.</p>
+  <div class="grid c2">
+   <div class="card"><ul>
+    <li><strong>Teşhis koymaz.</strong></li>
+    <li><strong>İlaç ya da tedavi önermez.</strong></li>
+    <li><strong>Fiyat garantisi vermez.</strong></li>
+   </ul></div>
+   <div class="card"><ul>
+    <li><strong>Tıbbi soruyu ekibe devreder.</strong> Cevabı hekiminiz verir.</li>
+    <li><strong>Acil belirtide 112’ye yönlendirir.</strong></li>
+    <li><strong>KVKK iznini almadan bilgi toplamaz.</strong></li>
+   </ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="diller" class="alt-bg">
+ <div class="wrap">
+  <h2>Beş dilde, aynı kalitede</h2>
+  <p class="lead">Hasta dilini değiştirirse Nöbetçi de değiştirir.</p>
+  <ul class="langs">
+   <li>Türkçe</li><li>English</li><li dir="rtl" lang="ar">العربية</li><li>Deutsch</li><li lang="ru">Русский</li>
+  </ul>
+ </div>
+</section>
+
+<section id="hekim">
+ <div class="wrap">
+  <h2>Bir hekim tarafından tasarlandı</h2>
+  <div class="card doc">
+   <div class="avatar" aria-hidden="true">GÖ</div>
+   <div>
+    <h3>Dr. Göktuğ Özkan</h3>
+    <p>İç Hastalıkları Uzmanı · İstanbul</p>
+    <p>Nöbetçi’nin ne söyleyeceği kadar neyi asla söylemeyeceği de bir hekim gözüyle belirlenir.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="pilot">
+ <div class="wrap">
+  <h2>Pilot</h2>
+  <p class="lead">Önce deneyin, sonra karar verin.</p>
+  <div class="grid c3">
+   <div class="card"><h3>14 gün ücretsiz</h3><p>Nöbetçi iki hafta boyunca gelen yabancı hasta mesajlarını karşılar; ne yaptığını konuşma kayıtlarından görürsünüz.</p></div>
+   <div class="card"><h3>Kurulum ücreti yok</h3><p>Lansman döneminde kurulum için ücret alınmaz.</p></div>
+   <div class="card"><h3>Sonrası</h3><p>Sabit taban ücret ve nitelikli talep başına ücret. Ayrıntıyı görüşmede, kullanımınıza göre netleştiririz.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="sss" class="alt-bg">
+ <div class="wrap">
+  <h2>Sık sorulan sorular</h2>
+  <details><summary>WhatsApp’a bağlanıyor mu?</summary><div class="a">Evet. Nöbetçi, web sitenizdeki sohbet penceresine ve WhatsApp Business hattınıza bağlanır.</div></details>
+  <details><summary>Kurulum ne kadar sürer?</summary><div class="a">Pilot için klinik bilgilerinizi aldıktan sonra kurulum genellikle birkaç gün sürer; WhatsApp bağlantısı Meta onay sürecine bağlıdır.</div></details>
+  <details><summary>Veri güvenliği ve KVKK nasıl ele alınıyor?</summary><div class="a">Hasta verisi yalnız açık onayla alınır; veri işleme sözleşmesi pilot öncesi imzalanır. Nöbetçi yalnızca randevu talebi için gereken bilgileri (ad, ülke, tercih edilen tarih, iletişim) alır ve ekibinize iletir.</div></details>
+  <details><summary>Hangi dilleri konuşuyor?</summary><div class="a">Türkçe, İngilizce, Arapça, Almanca ve Rusça.</div></details>
+  <details><summary>Fiyatı nedir?</summary><div class="a">Pilot 14 gün ücretsizdir ve lansman döneminde kurulum ücreti yoktur. Sonrasında sabit taban ücret ve nitelikli talep başına ücret uygulanır; ayrıntı görüşmede, kullanımınıza göre netleştirilir.</div></details>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="band">
+   <h2>14 gün ücretsiz pilotla başlayın</h2>
+   <p>Size göre hazırlanan Nöbetçi’nin gece boyunca neler yaptığını kendi gözünüzle görün.</p>
+   <a class="btn" href="mailto:drozkan2@gmail.com?subject=N%C3%B6bet%C3%A7i%20-%2014%20g%C3%BCnl%C3%BCk%20%C3%BCcretsiz%20pilot">14 günlük ücretsiz pilot</a>
+  </div>
+ </div>
+</section>
+
+<section id="en" style="padding-top:0">
+ <div class="wrap">
+  <details id="endetails">
+   <summary>English summary</summary>
+   <div class="a" lang="en">
+    <p><strong>Nöbetçi</strong> is a 24/7 multilingual first-contact and patient intake assistant for health-tourism intermediaries and clinics with international patient units, designed by a physician. It connects to your web chat and your WhatsApp Business line. It answers international patients in Turkish, English, Arabic, German and Russian while your clinic is closed, asks for consent, collects the details needed for an appointment request, and hands it to your staff in the morning.</p>
+    <p><strong>What it never does:</strong> no diagnosis, no medication or treatment advice, no price guarantees. Medical questions go to your staff; emergencies are directed to local emergency services (112 in Turkey); no data is collected without KVKK consent.</p>
+    <p><strong>Designed by</strong> Dr. Göktuğ Özkan, Internal Medicine specialist, Istanbul.</p>
+    <p><a class="btn" href="mailto:drozkan2@gmail.com?subject=Nobetci%20-%20free%2014-day%20pilot">Free 14-day pilot</a></p>
+   </div>
+  </details>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p>© Nöbetçi · Bir hekim tarafından tasarlandı · Dr. Göktuğ Özkan</p>
+ </div>
+</footer>
+
+<script>
+document.getElementById('enlink').addEventListener('click',function(){document.getElementById('endetails').open=true;});
+</script>
+</body>
+</html>
